@@ -1,9 +1,10 @@
 {
   "scripts": {
-    "start": "node index.ts",
+    "start": "node dist/index.js",
     "dev": "npx nodemon src/index.ts",
     "test": "jest",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watch",
+    "compile": "tsc"
   },
   "dependencies": {
     "@types/cors": "^2.8.17",
