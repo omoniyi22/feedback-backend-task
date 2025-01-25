@@ -1,5 +1,6 @@
 {
   "scripts": {
+    "start": "node index.ts",
     "dev": "npx nodemon src/index.ts",
     "test": "jest",
     "test:watch": "jest --watch"
