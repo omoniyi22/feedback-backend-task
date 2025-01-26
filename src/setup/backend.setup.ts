@@ -9,7 +9,7 @@ import { Logger } from "./../utils";
 import {
   authMiddleware,
   errorHandlerMiddleware,
-  routeMiddleware,
+  // routeMiddleware,
 } from "./../middlewares";
 
 export const backendSetup = () => {
@@ -18,7 +18,7 @@ export const backendSetup = () => {
   app.use(cors());
   app.use(express.json());
   // app.use(clientUse());
-  app.use(routeMiddleware);
+  // app.use(routeMiddleware);
 
   app.use("/health", (_req: Request, res: Response) => {
     res.send("It's healthy!");

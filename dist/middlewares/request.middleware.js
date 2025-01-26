@@ -12,7 +12,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.routeMiddleware = void 0;
 const utils_1 = require("./../utils");
 const ipValidator_1 = require("./../utils/ipValidator");
-const valid_ip_scope_1 = require("valid-ip-scope");
 require("dotenv/config");
 const formatRequestData = (req) => ({
     url: `${req.protocol}://${req.hostname}:${process.env.port}${req.url}`,
@@ -27,7 +26,7 @@ const routeMiddleware = (req, _res, next) => __awaiter(void 0, void 0, void 0, f
         }
         const ipValidation = (0, ipValidator_1.validateIp)(req.ip);
         const clientInfo = ipValidation.isValid
-            ? yield (0, valid_ip_scope_1.clientInspector)(req)
+            ? yield req
             : { error: ipValidation.reason };
         utils_1.Logger.group({
             title: "New Request",
