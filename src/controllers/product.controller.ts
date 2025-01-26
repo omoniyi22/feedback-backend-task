@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
-import { errorHandlerWrapper } from "@/utils";
-import { productService } from "@/services";
+import { errorHandlerWrapper } from "./../utils";
+import { productService } from "./../services";
 
 const createProductHandler = async (req: Request, res: Response): Promise<Response> => {
     try {

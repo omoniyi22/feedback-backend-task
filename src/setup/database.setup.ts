@@ -2,11 +2,11 @@
 
 import { createDatabase } from "typeorm-extension";
 import { SnakeNamingStrategy } from "typeorm-naming-strategies";
-import { UserEntity } from "@/entities";
+import { UserEntity } from "./../entities";
 import { AppDataSource } from "./datasource";
 import bcrypt from "bcryptjs";
-import { authService } from "@/services";
-import { CreateUserRequestType } from "@/types";
+import { authService } from "./../services";
+import { CreateUserRequestType } from "./../types";
 import "dotenv/config";
 
 export const databaseSetup = async (): Promise<void> => {

@@ -1,7 +1,7 @@
 /** @format */
 
-import { feedbackController } from "@/controllers";
-import { authMiddleware } from "@/middlewares";
+import { feedbackController } from "./../controllers";
+import { authMiddleware } from "./../middlewares";
 import { Router } from "express";
 
 export const feedbackRouter = Router();

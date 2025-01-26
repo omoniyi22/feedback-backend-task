@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
-import { feedbackService } from "@/services";
-import { errorHandlerWrapper } from "@/utils";
+import { feedbackService } from "./../services";
+import { errorHandlerWrapper } from "./../utils";
 
 
 const createFeedbackHandler = async (req: Request, res: Response): Promise<Response> => {

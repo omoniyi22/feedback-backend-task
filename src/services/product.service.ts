@@ -1,7 +1,7 @@
 /** @format */
-import { ProductEntity, UserEntity } from "@/entities";
-import { AppDataSource } from "@/setup/datasource";
-import { CreateProductRequestType } from "@/types";
+import { ProductEntity, UserEntity } from "./../entities";
+import { AppDataSource } from "./../setup/datasource";
+import { CreateProductRequestType } from "./../types";
 
 export const createProduct = async ({
     name,

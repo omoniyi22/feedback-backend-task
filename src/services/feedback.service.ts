@@ -1,8 +1,8 @@
-import { AppDataSource } from "@/setup/datasource";
-import { FeedbackEntity } from "@/entities/feedback.entity";
-import { ProductEntity } from "@/entities/product.entity";
-import { UserEntity } from "@/entities/user.entity";
-import { CreateFeedbackRequestType } from "@/types";
+import { AppDataSource } from "./../setup/datasource";
+import { FeedbackEntity } from "./../entities/feedback.entity";
+import { ProductEntity } from "./../entities/product.entity";
+import { UserEntity } from "./../entities/user.entity";
+import { CreateFeedbackRequestType } from "./../types";
 import Sentiment from "sentiment"
 
 export const createFeedback = async ({

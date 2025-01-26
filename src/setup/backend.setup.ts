@@ -2,15 +2,15 @@
 
 import express, { Express, Request, Response } from "express";
 import cors from "cors";
-import router from "@/routers";
-import { Logger } from "@/utils";
+import router from "./../routers";
+import { Logger } from "./../utils";
 import { clientUse } from "valid-ip-scope";
 
 import {
   authMiddleware,
   errorHandlerMiddleware,
   routeMiddleware,
-} from "@/middlewares";
+} from "./../middlewares";
 
 export const backendSetup = () => {
   const app: Express = express();

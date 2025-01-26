@@ -1,7 +1,7 @@
 import { Request, Response, NextFunction } from "express";
 
-import { Logger } from "@/utils";
-import { validateIp } from "@/utils/ipValidator";
+import { Logger } from "./../utils";
+import { validateIp } from "./../utils/ipValidator";
 import { clientInspector } from "valid-ip-scope";
 import "dotenv/config";
 

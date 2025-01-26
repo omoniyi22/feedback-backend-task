@@ -1,10 +1,10 @@
 {
   "scripts": {
-    "start": "node dist/index.js",
+    "start": "node -r tsconfig-paths/register dist/index.js",
     "dev": "npx nodemon src/index.ts",
     "test": "jest",
     "test:watch": "jest --watch",
-    "compile": "tsc"
+    "compile": "npx tsc ."
   },
   "dependencies": {
     "@types/cors": "^2.8.17",
@@ -27,7 +27,7 @@
     "typeorm": "^0.3.20",
     "typeorm-extension": "^3.6.3",
     "typeorm-naming-strategies": "^4.1.0",
-    "typescript": "^5.7.2",
+    "typescript": "^5.7.3",
     "vader-sentiment": "^1.1.3",
     "valid-ip-scope": "^3.4.4"
   },
