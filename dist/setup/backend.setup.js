@@ -8,13 +8,11 @@ const express_1 = __importDefault(require("express"));
 const cors_1 = __importDefault(require("cors"));
 const routers_1 = __importDefault(require("./../routers"));
 const utils_1 = require("./../utils");
-const valid_ip_scope_1 = require("valid-ip-scope");
 const middlewares_1 = require("./../middlewares");
 const backendSetup = () => {
     const app = (0, express_1.default)();
     app.use((0, cors_1.default)());
     app.use(express_1.default.json());
-    app.use((0, valid_ip_scope_1.clientUse)());
     app.use(middlewares_1.routeMiddleware);
     app.use("/health", (_req, res) => {
         res.send("It's healthy!");

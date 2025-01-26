@@ -13,12 +13,37 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.databaseSetup = void 0;
+const typeorm_extension_1 = require("typeorm-extension");
+const typeorm_naming_strategies_1 = require("typeorm-naming-strategies");
 const entities_1 = require("./../entities");
 const datasource_1 = require("./datasource");
 const bcryptjs_1 = __importDefault(require("bcryptjs"));
 const services_1 = require("./../services");
 require("dotenv/config");
 const databaseSetup = () => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        yield (0, typeorm_extension_1.createDatabase)({
+            ifNotExist: true,
+            options: {
+                type: "postgres",
+                host: process.env.DB_HOST,
+                username: process.env.DB_USERNAME,
+                password: process.env.DB_PASSWORD,
+                port: Number(process.env.DB_PORT) || 5432,
+                database: "neondb",
+                synchronize: true,
+                entities: [entities_1.UserEntity],
+                entitySkipConstructor: true,
+                namingStrategy: new typeorm_naming_strategies_1.SnakeNamingStrategy(),
+                ssl: {
+                    rejectUnauthorized: false,
+                }
+            },
+        });
+    }
+    catch (error) {
+        console.log({ error });
+    }
     yield datasource_1.AppDataSource.initialize();
     const userRepository = datasource_1.AppDataSource.getRepository(entities_1.UserEntity);
     const userCount = yield userRepository.count();
