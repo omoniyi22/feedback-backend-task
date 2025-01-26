@@ -10,28 +10,28 @@ import { CreateUserRequestType } from "./../types";
 import "dotenv/config";
 
 export const databaseSetup = async (): Promise<void> => {
-  // try {
-  //   await createDatabase({
-  //     ifNotExist: true,
-  //     options: {
-  //       type: "postgres",
-  //       host: process.env.DB_HOST,
-  //       username: process.env.DB_USERNAME,
-  //       password: process.env.DB_PASSWORD,
-  //       port: Number(process.env.DB_PORT) || 5432,
-  //       database: "neondb",
-  //       synchronize: true,
-  //       entities: [UserEntity],
-  //       entitySkipConstructor: true,
-  //       // namingStrategy: new SnakeNamingStrategy(),
-  //       ssl: {
-  //         rejectUnauthorized: false,
-  //       }
-  //     },
-  //   });
-  // } catch (error) {
-  //   console.log({ error })
-  // }
+  try {
+    await createDatabase({
+      ifNotExist: true,
+      options: {
+        type: "postgres",
+        host: process.env.DB_HOST,
+        username: process.env.DB_USERNAME,
+        password: process.env.DB_PASSWORD,
+        port: Number(process.env.DB_PORT) || 5432,
+        database: "neondb",
+        synchronize: true,
+        entities: [UserEntity],
+        entitySkipConstructor: true,
+        namingStrategy: new SnakeNamingStrategy(),
+        ssl: {
+          rejectUnauthorized: false,
+        }
+      },
+    });
+  } catch (error) {
+    console.log({ error })
+  }
 
   await AppDataSource.initialize();
 
