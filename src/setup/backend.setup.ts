@@ -4,7 +4,7 @@ import express, { Express, Request, Response } from "express";
 import cors from "cors";
 import router from "./../routers";
 import { Logger } from "./../utils";
-import { clientUse } from "valid-ip-scope";
+// import { clientUse } from "valid-ip-scope";
 
 import {
   authMiddleware,
